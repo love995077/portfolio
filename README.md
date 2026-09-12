@@ -100,7 +100,21 @@ and captions never update. Verify through a real headless render instead:
 ```bash
 NODE_PATH=<dir containing puppeteer-core> node tools/shoot.js 1512 950 d
 NODE_PATH=<dir containing puppeteer-core> node tools/shoot.js 390 844 m
+
+# check the deployed build instead of the local server
+SITE_URL=https://love-todawat-portfolio.onrender.com/   NODE_PATH=<dir> node tools/shoot.js 1512 950 live
 ```
+
+## Deployed
+
+Live at **https://love-todawat-portfolio.onrender.com** (Render static site,
+auto-deploys on every push to `main`).
+
+Note: the service was created through the Render REST API, and API-created
+services do not read `render.yaml` — the blueprint here is committed for
+reference but is inert. Cache and security headers are set on the service
+itself via `PUT /v1/services/{id}/headers`, and only take effect after a
+redeploy.
 
 It scrolls to every caption's hold point plus each page section, reports how
 many captions are visible at each stop (should always be exactly 1), checks the

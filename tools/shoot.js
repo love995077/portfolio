@@ -3,12 +3,13 @@
    through a normal browser tab (a backgrounded tab suspends rAF, so the
    canvas reads blank), so verification runs through a real headless render.
 
-   usage: NODE_PATH=<puppeteer-core dir> node tools/shoot.js [w] [h] [tag] */
+   usage: NODE_PATH=<puppeteer-core dir> node tools/shoot.js [w] [h] [tag]
+   set SITE_URL to check a deployed build instead of the local server. */
 const fs = require("fs");
 const puppeteer = require("puppeteer-core");
 
 const CHROME = "C:/Program Files/Google/Chrome/Application/chrome.exe";
-const URL = "http://127.0.0.1:4190/";
+const URL = process.env.SITE_URL || "http://127.0.0.1:4190/";
 const OUT = "work/shots";
 const SECTIONS = ["story", "journey", "work", "skills", "credentials", "gallery", "connect"];
 
