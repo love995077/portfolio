@@ -1,0 +1,47 @@
+{
+  "clips_dir": "D:/my_portfolio/assets/clips",
+  "frames_dir": "D:/my_portfolio/frames",
+  "master": "D:/my_portfolio/assets/master.mp4",
+  "fps": 12,
+  "width": 1152,
+  "xfade": 0.4,
+  "chapters": [
+    {
+      "name": "origin",
+      "file": "part-1.mp4"
+    },
+    {
+      "name": "pivot",
+      "file": "part-2.mp4"
+    },
+    {
+      "name": "craft",
+      "file": "part-3.mp4"
+    },
+    {
+      "name": "role",
+      "file": "part-4.mp4"
+    },
+    {
+      "name": "identity",
+      "file": "part-5.mp4"
+    },
+    {
+      "name": "certs",
+      "file": "part-6.mp4"
+    },
+    {
+      "name": "expertise",
+      "file": "part-7.mp4"
+    },
+    {
+      "name": "arrival",
+      "file": "part-8.mp4"
+    },
+    {
+      "name": "projects",
+      "file": "part-9.mp4"
+    }
+  ],
+  "quality": 72
+}

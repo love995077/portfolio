@@ -1,0 +1,29 @@
+# Render blueprint — the site is fully static, so there is no build step.
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: love-todawat-portfolio
+    runtime: static
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    buildFilter:
+      ignoredPaths:
+        - tools/**
+        - work/**
+        - README.md
+    headers:
+      # Frames and stills are content-addressed by the build — never change
+      # under the same name, so they can be cached hard. This matters: the
+      # page pulls 826 frames on first load.
+      - path: /frames/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /stills/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin

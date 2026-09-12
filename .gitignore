@@ -1,0 +1,13 @@
+# python
+venv/
+__pycache__/
+*.pyc
+
+# film sources — the built frames/ and stills/ are what the site ships
+assets/
+work/
+
+# editors / os
+.DS_Store
+Thumbs.db
+.vscode/
