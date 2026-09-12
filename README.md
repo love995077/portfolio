@@ -102,8 +102,14 @@ NODE_PATH=<dir containing puppeteer-core> node tools/shoot.js 1512 950 d
 NODE_PATH=<dir containing puppeteer-core> node tools/shoot.js 390 844 m
 
 # check the deployed build instead of the local server
-SITE_URL=https://love-todawat-portfolio.onrender.com/   NODE_PATH=<dir> node tools/shoot.js 1512 950 live
+SITE_URL=https://love-todawat-portfolio.onrender.com/ \
+  NODE_PATH=<dir> node tools/shoot.js 1512 950 live
 ```
+
+It scrolls to every caption's hold point plus each page section, reports how
+many captions are visible at each stop (should always be exactly 1), checks the
+nav appears after the film, counts un-revealed blocks, and fails loudly on
+console errors or failed requests. Screenshots land in `work/shots/`.
 
 ## Deployed
 
@@ -115,8 +121,3 @@ services do not read `render.yaml` — the blueprint here is committed for
 reference but is inert. Cache and security headers are set on the service
 itself via `PUT /v1/services/{id}/headers`, and only take effect after a
 redeploy.
-
-It scrolls to every caption's hold point plus each page section, reports how
-many captions are visible at each stop (should always be exactly 1), checks the
-nav appears after the film, counts un-revealed blocks, and fails loudly on
-console errors or failed requests. Screenshots land in `work/shots/`.
